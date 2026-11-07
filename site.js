@@ -167,27 +167,6 @@
 
   if (!fine || reduce) return;
 
-  /* Ring cursor */
-  var c = document.createElement('div');
-  c.className = 'cursor';
-  c.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(c);
-  var tx = 0, ty = 0, x = 0, y = 0, run = false;
-  function loop() {
-    x += (tx - x) * .18;
-    y += (ty - y) * .18;
-    c.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0)';
-    requestAnimationFrame(loop);
-  }
-  document.addEventListener('mousemove', function (e) {
-    tx = e.clientX; ty = e.clientY;
-    if (!run) { run = true; x = tx; y = ty; requestAnimationFrame(loop); }
-    c.classList.add('on');
-    var t = e.target.closest && e.target.closest('a,button');
-    c.classList.toggle('big', !!t);
-  });
-  document.documentElement.addEventListener('mouseleave', function () { c.classList.remove('on'); });
-
   /* Magnetic buttons */
   document.querySelectorAll('.btn').forEach(function (b) {
     b.addEventListener('mousemove', function (e) {
