@@ -860,3 +860,58 @@ html.menu-open .drawer::before{opacity:1}
 .drawer li{border-top-color:rgba(196,222,238,.2)}
 .drawer li:last-child{border-bottom-color:rgba(196,222,238,.2)}
 @media (prefers-reduced-motion:reduce){.drawer::before{transition:none}}
+
+
+/* ---- Home, sezione "Aree di lavoro": orizzonte luminoso animato sullo sfondo ---- */
+.hm>section.sec-hz{background:transparent}
+.hz{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;border-radius:inherit}
+.hz i{position:absolute;left:50%;top:72%;width:130%;aspect-ratio:1;margin-left:-65%;border-radius:50%;will-change:transform}
+.hz .b{background:#6F8BFF;filter:blur(50px);opacity:.7;animation:hzB 12s ease-in-out infinite}
+.hz .r{background:#FF6A3C;filter:blur(58px);opacity:.6;animation:hzR 12s ease-in-out infinite}
+.hz .w{background:radial-gradient(circle at 50% 8%,#FFFFFF 0,#EFE9F2 38%,#D9CFE4 70%);filter:blur(34px);opacity:.55;animation:hzW 12s ease-in-out infinite}
+@keyframes hzW{0%,100%{transform:translate(-4%,22%) rotate(-6deg)}50%{transform:translate(4%,-52%) rotate(8deg) scale(1.04)}}
+@keyframes hzB{0%,100%{transform:translate(-3%,19%) rotate(-6deg)}50%{transform:translate(5%,-58%) rotate(8deg) scale(1.04)}}
+@keyframes hzR{0%,100%{transform:translate(-5%,25%) rotate(-6deg)}50%{transform:translate(3%,-46%) rotate(8deg) scale(1.04)}}
+.sec-hz h2.h2,.sec-hz .label{text-shadow:0 1px 18px rgba(10,10,11,.55)}
+.hz::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.5) 0,rgba(10,10,11,.2) 40%,rgba(10,10,11,.03) 75%)}
+.sec-hz>.wrap{position:relative;z-index:2}
+@media (prefers-reduced-motion:reduce){.hz i{animation:none}}
+@media (max-width:900px){.hz i{width:230%;margin-left:-115%;top:76%}}
+/* riquadri di testo sulle sezioni con l'effetto: leggibilità sempre garantita */
+.sec-hz .steps,.sec-hz .stats{gap:clamp(12px,1.6vw,20px)}
+.sec-hz .step,.sec-hz .stat{background:rgba(10,10,11,.66);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:clamp(20px,2.4vw,30px)}
+.sec-hz .step{color:#fff}
+.sec-hz .step p{color:rgba(255,255,255,.8)}
+.sec-hz .step h3{color:#fff}
+.sec-hz .stat p,.sec-hz .stat small{color:rgba(255,255,255,.86)}
+.sec-hz .stat-note{display:inline-block;background:rgba(10,10,11,.66);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);padding:12px 18px;border-radius:14px;color:rgba(255,255,255,.86)}
+.sec-hz .label{color:#fff;text-shadow:0 1px 10px rgba(10,10,11,.7)}
+/* Chi sono: riquadri di testo */
+.sec-hz .lead{text-shadow:0 1px 20px rgba(10,10,11,.6)}
+.sec-hz .cols p,.sec-hz .pillar{background:rgba(10,10,11,.66);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:clamp(18px,2.2vw,28px);color:rgba(255,255,255,.88)}
+.sec-hz .pillar h3{color:#fff}
+.sec-hz .pillar p{color:rgba(255,255,255,.8)}
+.sec-hz .pillars{gap:clamp(12px,1.6vw,20px)}
+.sec-hz .cols{gap:clamp(12px,1.6vw,20px)}
+.sec-hz .cols{align-items:start}
+
+/* Colori distinti per fasce d'età (Home) e per i tre principi (Chi sono) */
+.plates.ages li:nth-child(1){--c:#B3142B}
+.plates.ages li:nth-child(2){--c:#1F6A8A}
+.plates.ages li:nth-child(3){--c:#2E7D5B}
+.plates.ages li{border-top:2px solid var(--c)}
+.plates.ages li:last-child{border-bottom:2px solid var(--c)}
+.plates.ages b{color:var(--c)}
+.pillars .pillar:nth-child(1){--c:#FF6A5C}
+.pillars .pillar:nth-child(2){--c:#8FC3F0}
+.pillars .pillar:nth-child(3){--c:#FFB35C}
+.pillars .pillar{border-top:3px solid var(--c)}
+.pillars .pillar::before{background:var(--c)}
+.pillars .pillar b,.pillars .pillar h3{color:var(--c)}
+.pillars .pillar:hover::before{background:var(--c)}
+.pillars .pillar::before{display:none}
+.agefig .age-node:nth-of-type(1){fill:#B3142B}
+.agefig .age-node:nth-of-type(2){fill:#1F6A8A}
+.agefig .age-node:nth-of-type(3){fill:#2E7D5B}
+/* Chi sono: primo riquadro in azzurro, in tema con la palette */
+.sec-hz .cols p:first-child{background:#C4DEEE;-webkit-backdrop-filter:none;backdrop-filter:none;border-color:rgba(10,10,11,.1);color:#0A0A0B;font-weight:500;box-shadow:0 18px 40px -24px rgba(0,0,0,.6)}
