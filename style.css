@@ -896,22 +896,40 @@ html.menu-open .drawer::before{opacity:1}
 .sec-hz .cols{align-items:start}
 
 /* Colori distinti per fasce d'età (Home) e per i tre principi (Chi sono) */
-.plates.ages li:nth-child(1){--c:#B3142B}
-.plates.ages li:nth-child(2){--c:#1F6A8A}
-.plates.ages li:nth-child(3){--c:#2E7D5B}
+.plates.ages li:nth-child(1){--c:#2D6D86}
+.plates.ages li:nth-child(2){--c:#2D6D86}
+.plates.ages li:nth-child(3){--c:#2D6D86}
 .plates.ages li{border-top:2px solid var(--c)}
 .plates.ages li:last-child{border-bottom:2px solid var(--c)}
 .plates.ages b{color:var(--c)}
-.pillars .pillar:nth-child(1){--c:#FF6A5C}
-.pillars .pillar:nth-child(2){--c:#8FC3F0}
-.pillars .pillar:nth-child(3){--c:#FFB35C}
+.pillars .pillar{--c:#FF6A5C}
 .pillars .pillar{border-top:3px solid var(--c)}
 .pillars .pillar::before{background:var(--c)}
 .pillars .pillar b,.pillars .pillar h3{color:var(--c)}
 .pillars .pillar:hover::before{background:var(--c)}
 .pillars .pillar::before{display:none}
-.agefig .age-node:nth-of-type(1){fill:#B3142B}
-.agefig .age-node:nth-of-type(2){fill:#1F6A8A}
-.agefig .age-node:nth-of-type(3){fill:#2E7D5B}
+.agefig .age-node{fill:#2D6D86}
 /* Chi sono: primo riquadro in azzurro, in tema con la palette */
 .sec-hz .cols p:first-child{background:#C4DEEE;-webkit-backdrop-filter:none;backdrop-filter:none;border-color:rgba(10,10,11,.1);color:#0A0A0B;font-weight:500;box-shadow:0 18px 40px -24px rgba(0,0,0,.6)}
+
+/* Home: fasce d'età tutte blu; Chi sono: principi tutti rossi, riquadri "liquid glass" */
+.plates.ages li:nth-child(n){--c:#2D6D86}
+.agefig .age-node:nth-of-type(n){fill:#2D6D86}
+.pillars .pillar:nth-child(n){--c:#FF6A5C}
+.sec-hz .pillar{position:relative;overflow:hidden;isolation:isolate;
+ background:linear-gradient(145deg,rgba(255,255,255,.26) 0,rgba(255,255,255,.08) 45%,rgba(255,255,255,.14) 100%);
+ -webkit-backdrop-filter:blur(20px) saturate(1.9) brightness(1.12);backdrop-filter:blur(20px) saturate(1.9) brightness(1.12);
+ border:1px solid rgba(255,255,255,.38);border-top:2px solid var(--c);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -1px 0 rgba(255,255,255,.12),inset 0 0 22px rgba(255,255,255,.07),0 16px 36px -16px rgba(0,0,0,.55)}
+.sec-hz .pillar::after{content:"";position:absolute;z-index:-1;left:-10%;top:-60%;width:120%;height:90%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.35),rgba(255,255,255,0));pointer-events:none}
+.sec-hz .pillar p{color:rgba(255,255,255,.92)}
+.sec-hz .pillar h3,.sec-hz .pillar b{text-shadow:0 1px 8px rgba(10,10,11,.35)}
+
+/* liquid glass: più contrasto sul testo quando l'alone è chiaro */
+.sec-hz .pillar{background:linear-gradient(145deg,rgba(255,255,255,.22) 0,rgba(255,255,255,.05) 45%,rgba(255,255,255,.1) 100%),rgba(10,10,11,.46);-webkit-backdrop-filter:blur(20px) saturate(1.7) brightness(.9);backdrop-filter:blur(20px) saturate(1.7) brightness(.9)}
+.sec-hz .pillar b,.sec-hz .pillar h3{color:#FF8579;text-shadow:0 1px 10px rgba(10,10,11,.55)}
+.sec-hz .pillar p{color:#fff;text-shadow:0 1px 8px rgba(10,10,11,.55)}
+/* grafico età: profondità */
+.agefig .age-node{fill:none}
+.agefig svg{filter:drop-shadow(0 10px 14px rgba(10,10,11,.12))}
+.agefig .age-ext{opacity:1}
