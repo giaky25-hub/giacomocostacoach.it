@@ -89,7 +89,7 @@
       es.forEach(function (e) {
         if (!e.isIntersecting) return;
         io.unobserve(e.target);
-        var el = e.target, to = +el.getAttribute('data-count'), suf = el.getAttribute('data-suffix') || '', t0 = null, d = 1400;
+        var el = e.target, to = +el.getAttribute('data-count'), suf = el.getAttribute('data-suffix') || '', t0 = null, d = 3400;
         function step(t) {
           if (t0 === null) t0 = t;
           var p = Math.min((t - t0) / d, 1), v = Math.round(to * (1 - Math.pow(1 - p, 3)));
@@ -101,6 +101,18 @@
     }, { threshold: .6 });
     document.querySelectorAll('[data-count]').forEach(function (el) { io.observe(el); });
   }
+
+  /* Whole "Chi sono" card on the home page is one big link */
+  document.querySelectorAll('.sec-glass').forEach(function (card) {
+    var link = card.querySelector('a.go');
+    if (!link) return;
+    card.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('a')) return;
+      var sel = window.getSelection && window.getSelection().toString();
+      if (sel) return;
+      link.click();
+    });
+  });
 
   /* Copy the email address */
   document.querySelectorAll('.copy').forEach(function (b) {

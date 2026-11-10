@@ -933,3 +933,27 @@ html.menu-open .drawer::before{opacity:1}
 .agefig .age-node{fill:none}
 .agefig svg{filter:drop-shadow(0 10px 14px rgba(10,10,11,.12))}
 .agefig .age-ext{opacity:1}
+
+/* Home, "Chi sono": riquadro in stile liquid glass sopra una luce colorata */
+.hm>section.sec-glass{--paper:#10151C;--ink:#fff;--mute:rgba(255,255,255,.88);--accent:#fff;--line:rgba(255,255,255,.3);color:#fff;border:1px solid rgba(255,255,255,.42);
+ background:radial-gradient(55% 95% at 10% 18%,rgba(196,222,238,.85) 0,rgba(196,222,238,0) 66%),radial-gradient(50% 95% at 92% 90%,rgba(232,53,43,.75) 0,rgba(232,53,43,0) 68%),radial-gradient(38% 70% at 58% -8%,rgba(111,139,255,.6) 0,rgba(111,139,255,0) 72%),#0F141B;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.75),inset 0 -1px 0 rgba(255,255,255,.18),inset 0 0 46px rgba(255,255,255,.14),0 26px 54px -26px rgba(0,0,0,.75)}
+.hm>section.sec-glass::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:normal;opacity:1;background:linear-gradient(118deg,rgba(255,255,255,.32) 0,rgba(255,255,255,.07) 38%,rgba(255,255,255,.02) 60%,rgba(255,255,255,.2) 100%);-webkit-backdrop-filter:blur(14px) saturate(1.6);backdrop-filter:blur(14px) saturate(1.6)}
+.hm>section.sec-glass::before{content:"";position:absolute;z-index:1;left:4%;right:4%;top:0;height:38%;pointer-events:none;border-radius:0 0 60% 60%/0 0 100% 100%;background:linear-gradient(180deg,rgba(255,255,255,.26),rgba(255,255,255,0))}
+.sec-glass .label{color:#fff}
+.sec-glass .lead,.sec-glass .go{color:#fff;text-shadow:0 1px 14px rgba(10,10,11,.55)}
+.sec-glass .go::after{border-color:#fff}
+/* Home "Chi sono": tutto il riquadro è cliccabile; etichetta e link più leggibili */
+.hm>section.sec-glass{cursor:pointer}
+.sec-glass .go{position:static}
+.sec-glass .label{font-weight:600;font-size:.8125rem;color:#fff;text-shadow:0 1px 8px rgba(10,10,11,.85),0 0 2px rgba(10,10,11,.6)}
+.sec-glass .go{font-weight:600;font-size:.8125rem;padding:.8rem 1.15rem;border-radius:999px;background:rgba(10,10,11,.5);border:1px solid rgba(255,255,255,.55);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);text-shadow:0 1px 6px rgba(10,10,11,.8);transition:background .3s,border-color .3s}
+.hm>section.sec-glass:hover .go{background:rgba(10,10,11,.68);border-color:#fff}
+.hm>section.sec-glass:hover .go::after{transform:translateX(6px)}
+.sec-glass .go:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.sec-glass .label{justify-self:start;align-self:start;padding:.55rem .9rem;border-radius:999px;background:rgba(10,10,11,.5);border:1px solid rgba(255,255,255,.4);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);margin-top:0}
+/* Home: pulsanti principali arrotondati */
+.hero .actions .btn{border-radius:18px;overflow:hidden}
+/* Tutti i pulsanti del sito: sempre stondati */
+.btn,.btn.solid,.btn.light,.btn.hot{border-radius:18px;overflow:hidden}
+.copy{border-radius:999px}
