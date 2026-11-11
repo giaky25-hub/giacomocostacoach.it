@@ -957,3 +957,5 @@ html.menu-open .drawer::before{opacity:1}
 /* Tutti i pulsanti del sito: sempre stondati */
 .btn,.btn.solid,.btn.light,.btn.hot{border-radius:18px;overflow:hidden}
 .copy{border-radius:999px}
+/* "Chi sono" (Home): etichetta senza casella, solo testo leggibile */
+.sec-glass .label{padding:0;border:0;border-radius:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;margin-top:6px;text-shadow:0 1px 10px rgba(10,10,11,.9),0 0 3px rgba(10,10,11,.7),0 0 18px rgba(10,10,11,.5)}
